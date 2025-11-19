@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager System)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body{font-family:Inter,system-ui,-apple-system,sans-serif;margin:0;padding:24px;background:#0f172a;color:#e2e8f0}
+    .card{background:#111827;border:1px solid #1f2937;border-radius:16px;padding:16px;box-shadow:0 4px 24px rgba(0,0,0,.2)}
+    input,select{padding:8px 10px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:#e2e8f0}
+    button{padding:8px 12px;border-radius:10px;border:1px solid #334155;background:#1d4ed8;color:#fff;cursor:pointer}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{padding:10px;border-bottom:1px solid #1f2937}
+    .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+    .labels{display:flex;gap:6px;flex-wrap:wrap}
+    .chip{background:#0b1220;border:1px solid #334155;border-radius:999px;padding:2px 8px;font-size:12px}
+  </style>
+</head>
+<body>
+  <h1>Task Management</h1>
+  <div class="card">
+    <div class="grid">
+      <input id="title" placeholder="Title" />
+      <input id="description" placeholder="Description" />
+      <select id="status">
+        <option value="todo">todo</option>
+        <option value="doing">doing</option>
+        <option value="done">done</option>
+      </select>
+      <input id="assignee" placeholder="Assignee" />
+      <input id="dueDate" type="date" />
+      <input id="labels" placeholder="labels (comma)" />
+    </div>
+    <div style="margin-top:10px">
+      <button id="create">Create</button>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th><th>Status</th><th>Assignee</th><th>Due</th><th>Labels</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
